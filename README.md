@@ -1,66 +1,95 @@
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+# nome repo: **laravel-model-controller**
 
-## About Laravel
+### Oggi facciamo la nostra prima vera interazione con il database utilizzando l’ORM di Laravel.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+1. Create un nuovo progetto Laravel 10
+2. tramite phpMyAdmin create un nuovo database laravel_model_controller
+3. Importate nel vostro database la tabella movies in allegato
+4. inserite le vostre credenziali per il database nel file .env
+5. Create un model Movie php artisan make:model Movie
+6. Create un controller che gestirà la rotta / php artisan make:controller Guest/PageController
+7. All’interno della funzione index() del controller, recuperate tutti i film dal database e passateli alla view, che quindi li visualizzerà a schermo, tramite delle card.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+### BONUS: Stilare il layout nei dettagli con css
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## Database
 
-## Learning Laravel
+-- phpMyAdmin SQL Dump
+-- version 4.9.5
+-- https://www.phpmyadmin.net/
+--
+-- Host: localhost:3306
+-- Creato il: Mag 15, 2021 alle 11:57
+-- Versione del server: 5.7.24
+-- Versione PHP: 7.4.1
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
+SET time_zone = "+00:00";
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+/_!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT _/;
+/_!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS _/;
+/_!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION _/;
+/_!40101 SET NAMES utf8mb4 _/;
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+--
+-- Database: `tmdb`
+--
 
-## Laravel Sponsors
+---
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+--
+-- Struttura della tabella `movies`
+--
 
-### Premium Partners
+CREATE TABLE `movies` (
+`id` int(11) NOT NULL,
+`title` varchar(100) DEFAULT NULL,
+`original_title` varchar(100) DEFAULT NULL,
+`nationality` varchar(20) DEFAULT NULL,
+`date` date DEFAULT NULL,
+`vote` float(2,1) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+--
+-- Dump dei dati per la tabella `movies`
+--
 
-## Contributing
+INSERT INTO `movies` (`id`, `title`, `original_title`, `nationality`, `date`, `vote`) VALUES
+(1, 'Il Padrino', 'The Godfather', 'american', '1972-03-24', 9.2),
+(2, 'Via Col Vento', 'Gone With The Wind', 'american', '1939-12-15', 8.6),
+(3, 'Psycho', 'Psycho', 'american', '1960-06-16', 9.4),
+(4, 'Gravity', 'Gravity', 'american/british', '2013-08-28', 7.8),
+(5, 'Toy Story - Il Mondo Dei Giocattoli', 'Toy Story', 'american/british', '1995-11-19', 9.0),
+(6, 'Pulp Fiction', 'Pulp Fiction', 'american', '1994-10-14', 9.2),
+(7, 'Forrest Gump', 'Forrest Gump', 'american/british', '1994-06-23', 8.8),
+(8, 'Guerre Stellari', 'Star Wars', 'american', '1977-05-25', 8.6),
+(9, 'E.T. - L\'extra-terrestre', 'E.T. The Extra-Terrestrial', 'american', '1982-05-26', 7.9),
+(10, 'Il silenzio degli innocenti', 'The Silence of the Lambs', 'american', '1991-01-30', 8.6);
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+--
+-- Indici per le tabelle scaricate
+--
 
-## Code of Conduct
+--
+-- Indici per le tabelle `movies`
+--
+ALTER TABLE `movies`
+ADD PRIMARY KEY (`id`);
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+--
+-- AUTO_INCREMENT per le tabelle scaricate
+--
 
-## Security Vulnerabilities
+--
+-- AUTO_INCREMENT per la tabella `movies`
+--
+ALTER TABLE `movies`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+/_!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT _/;
+/_!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS _/;
+/_!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION _/;
