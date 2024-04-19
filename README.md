@@ -16,6 +16,7 @@
 
 ## Database
 
+```sql
 -- phpMyAdmin SQL Dump
 -- version 4.9.5
 -- https://www.phpmyadmin.net/
@@ -30,28 +31,29 @@ SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
-/_!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT _/;
-/_!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS _/;
-/_!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION _/;
-/_!40101 SET NAMES utf8mb4 _/;
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
 
 --
 -- Database: `tmdb`
 --
 
----
+-- --------------------------------------------------------
 
 --
 -- Struttura della tabella `movies`
 --
 
 CREATE TABLE `movies` (
-`id` int(11) NOT NULL,
-`title` varchar(100) DEFAULT NULL,
-`original_title` varchar(100) DEFAULT NULL,
-`nationality` varchar(20) DEFAULT NULL,
-`date` date DEFAULT NULL,
-`vote` float(2,1) DEFAULT NULL
+  `id` int(11) NOT NULL,
+  `title` varchar(100) DEFAULT NULL,
+  `original_title` varchar(100) DEFAULT NULL,
+  `nationality` varchar(20) DEFAULT NULL,
+  `date` date DEFAULT NULL,
+  `vote` float(2,1) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -78,7 +80,7 @@ INSERT INTO `movies` (`id`, `title`, `original_title`, `nationality`, `date`, `v
 -- Indici per le tabelle `movies`
 --
 ALTER TABLE `movies`
-ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- AUTO_INCREMENT per le tabelle scaricate
@@ -88,8 +90,9 @@ ADD PRIMARY KEY (`id`);
 -- AUTO_INCREMENT per la tabella `movies`
 --
 ALTER TABLE `movies`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
-/_!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT _/;
-/_!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS _/;
-/_!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION _/;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+```
