@@ -19,20 +19,14 @@
 </head>
 
 <body>
-    <header>
-        <h1>THIS IS HEADER</h1>
-        <nav>
-            <h2>NAVBAR</h2>
-        </nav>
-    </header>
+
+    @include('partials.header')
 
     <main>
         @yield('content')
     </main>
 
-    <footer>
-        <h1>This is Footer</h1>
-    </footer>
+    @include('partials.footer')
 
 
 
