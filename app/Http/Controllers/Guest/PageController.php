@@ -21,18 +21,13 @@ class PageController extends Controller
     public function about()
     {
 
-        $movies = Movie::all();
-        // dd($movies);
-
-        return view('about', compact('movies'));
+        return view('about');
     }
 
     public function contacts()
     {
 
-        $movies = Movie::all();
-        // dd($movies);
 
-        return view('contacts', compact('movies'));
+        return view('contacts');
     }
 }
