@@ -19,3 +19,9 @@ Route::get('/', [PageController::class, 'index'])->name('welcome');
 Route::get('/about', [PageController::class, 'about'])->name('about');
 
 Route::get('/contacts', [PageController::class, 'contacts'])->name('contacts');
+
+Route::get('/query1', [PageController::class, 'query1'])->name('query1');
+
+Route::get('/query2', [PageController::class, 'query2'])->name('query2');
+
+Route::get('/query3', [PageController::class, 'query3'])->name('query3');

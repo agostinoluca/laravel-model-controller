@@ -30,4 +30,25 @@ class PageController extends Controller
 
         return view('contacts');
     }
+
+    public function query1()
+    {
+        $bestMovies = Movie::where('vote', '>', 8.8)->orderBy('vote', 'desc')->get();
+
+        return view('query1', compact('bestMovies'));
+    }
+
+    public function query2()
+    {
+        $americanMovies = Movie::where('nationality', 'american')->get();
+
+        return view('query2', compact('americanMovies'));
+    }
+
+    public function query3()
+    {
+        $britishMovies = Movie::where('nationality', 'REGEXP', 'british')->get();
+
+        return view('query3', compact('britishMovies'));
+    }
 }
