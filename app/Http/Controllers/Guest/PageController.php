@@ -17,4 +17,22 @@ class PageController extends Controller
 
         return view('welcome', compact('movies'));
     }
+
+    public function about()
+    {
+
+        $movies = Movie::all();
+        // dd($movies);
+
+        return view('about', compact('movies'));
+    }
+
+    public function contacts()
+    {
+
+        $movies = Movie::all();
+        // dd($movies);
+
+        return view('contacts', compact('movies'));
+    }
 }

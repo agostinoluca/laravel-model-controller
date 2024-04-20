@@ -1,3 +1,3 @@
-<footer>
-    <h1>This is Footer</h1>
+<footer class="bg-dark p-3 text-center text-light">
+    <span>This is an exercise of Laravel</span>
 </footer>
