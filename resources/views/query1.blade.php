@@ -4,7 +4,7 @@
 
 @section('content')
     <div class="container">
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-xl-5 row-cols-xxl-6 g-4 ">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-xl-5 g-4">
             @foreach ($bestMovies as $movie)
                 <div class="col">
                     <div class="card text-center">
