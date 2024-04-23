@@ -1,11 +1,11 @@
 @extends('layouts.app')
 
-<title>@yield('pagetitle', '1')</title>
+<title>@yield('pagetitle', 'American Movies')</title>
 
 @section('content')
     <div class="container">
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-xl-5 g-4">
-            @foreach ($bestMovies as $movie)
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-xl-5 row-cols-xxl-6 g-4 ">
+            @foreach ($americanMovies as $movie)
                 <div class="col">
                     <div class="card text-center">
                         <img class="card-img-top" src="https://picsum.photos/600/600" alt="random image by Lorem Picsum">

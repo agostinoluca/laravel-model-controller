@@ -31,24 +31,24 @@ class PageController extends Controller
         return view('contacts');
     }
 
-    public function query1()
+    public function bestmovies()
     {
         $bestMovies = Movie::where('vote', '>', 8.8)->orderBy('vote', 'desc')->get();
 
-        return view('query1', compact('bestMovies'));
+        return view('bestmovies', compact('bestMovies'));
     }
 
-    public function query2()
+    public function americanmovies()
     {
         $americanMovies = Movie::where('nationality', 'american')->get();
 
-        return view('query2', compact('americanMovies'));
+        return view('americanmovies', compact('americanMovies'));
     }
 
-    public function query3()
+    public function britishmovies()
     {
         $britishMovies = Movie::where('nationality', 'REGEXP', 'british')->get();
 
-        return view('query3', compact('britishMovies'));
+        return view('britishmovies', compact('britishMovies'));
     }
 }

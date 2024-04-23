@@ -11,11 +11,11 @@
 
     {{-- NAV ALTRE QUERY --}}
     <nav class="nav justify-content-center bg-secondary">
-        <a class="nav-link {{ Route::currentRouteName() === 'query1' ? 'bg-primary text-light' : 'text-light' }}"
-            href="{{ route('query1') }}">Best Movies</a>
-        <a class="nav-link {{ Route::currentRouteName() === 'query2' ? 'bg-primary text-light' : 'text-light' }}"
-            href="{{ route('query2') }}">American Movies</a>
-        <a class="nav-link {{ Route::currentRouteName() === 'query3' ? 'bg-primary text-light' : 'text-light' }}"
-            href="{{ route('query3') }}">British Movies</a>
+        <a class="nav-link {{ Route::currentRouteName() === 'bestmovies' ? 'bg-primary text-light' : 'text-light' }}"
+            href="{{ route('bestmovies') }}">Best Movies</a>
+        <a class="nav-link {{ Route::currentRouteName() === 'americanmovies' ? 'bg-primary text-light' : 'text-light' }}"
+            href="{{ route('americanmovies') }}">American Movies</a>
+        <a class="nav-link {{ Route::currentRouteName() === 'britishmovies' ? 'bg-primary text-light' : 'text-light' }}"
+            href="{{ route('britishmovies') }}">British Movies</a>
     </nav>
 </header>

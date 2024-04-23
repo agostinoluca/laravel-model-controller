@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-<title>@yield('pagetitle', '3')</title>
+<title>@yield('pagetitle', 'British Movies')</title>
 
 @section('content')
     <div class="container">
